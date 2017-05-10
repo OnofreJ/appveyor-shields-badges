@@ -12,12 +12,13 @@ Data is collected by appveyor WebAPI on `api/projects/{username}/{projectSlug}/b
 #### Usage in github (Markdown)
 
 ```
-[![Tests status](<this should be address of deployed webservice>/api/api/testResults/<USERNAME>/<PROJECTSLUG>/badge.svg)](https://ci.appveyor.com/project/<USERNAME>/<PROJECTSLUG>)
+[![Tests status](https://appveyor-shields-badge.herokuapp.com/api/api/testResults/<USERNAME>/<PROJECTSLUG>/badge.svg)](https://ci.appveyor.com/project/<USERNAME>/<PROJECTSLUG>)
 ```
 Please replace `<USERNAME>` and `<PROJECTSLUG>` with your appveyor username and your project slug / name, for example:
 ```
-[![Tests status](<this should be address of deployed webservice>/api/testResults/monkey3310/netcore-teamcity-api/badge.svg)](https://ci.appveyor.com/project/monkey3310/netcore-teamcity-api)
+[![Tests status](https://appveyor-shields-badge.herokuapp.com/api/testResults/monkey3310/netcore-teamcity-api/badge.svg)](https://ci.appveyor.com/project/monkey3310/netcore-teamcity-api)
 ```
+Will look like this: [![Tests status](https://appveyor-shields-badge.herokuapp.com/api/testResults/monkey3310/netcore-teamcity-api/badge.svg)](https://ci.appveyor.com/project/monkey3310/netcore-teamcity-api)
 
 
 
