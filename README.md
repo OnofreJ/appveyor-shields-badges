@@ -1,5 +1,5 @@
 # AppVeyor status badges (using Shield.io badges)
-A simple webapi service that gets the detailed data from AppVeyor project and returns formated status badge. For badge creation, https://img.shields.io API is used.
+A simple webapi service that gets the detailed data from AppVeyor project and returns formated status badge. For badge creation, [shields.io](https://shields.io) API is used.
 
 ## AppVeyor Tests Status
 #### Examples
