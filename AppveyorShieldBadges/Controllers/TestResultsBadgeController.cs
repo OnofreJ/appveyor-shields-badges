@@ -19,7 +19,7 @@ namespace AppveyorShieldBadges.Controllers
 
             return results.FailingCount == 0 ? 
                 _badgeService.GetBadge("tests", $"{results.PassingCount} passing", "brightgreen") : 
-                _badgeService.GetBadge("tests", $"{results.FailingCount} failing", "red");
+                _badgeService.GetBadge("tests", $"{results.FailingCount} failed", "red");
         }
 
         private TestResults GetAppVeyorTestsResults(string username, string projectSlug, string branchName = "master")
