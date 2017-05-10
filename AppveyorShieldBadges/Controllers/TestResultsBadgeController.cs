@@ -17,6 +17,8 @@ namespace AppveyorShieldBadges.Controllers
         {
             var results = GetAppVeyorTestsResults(username, projectSlug);
 
+            if (results.BuildRunning) return _badgeService.GetBadge("tests", $"pending", "lightgrey"); 
+
             return results.FailingCount == 0 ? 
                 _badgeService.GetBadge("tests", $"{results.PassingCount} passing", "brightgreen") : 
                 _badgeService.GetBadge("tests", $"{results.FailingCount} failed", "red");
@@ -26,6 +28,7 @@ namespace AppveyorShieldBadges.Controllers
         {
             long passedTestsCount = 0;
             long failedTestsCount = 0;
+            bool running = false;
 
             using (var client = new HttpClient())
             {
@@ -39,11 +42,12 @@ namespace AppveyorShieldBadges.Controllers
                     {
                         passedTestsCount += job.Value<int>("passedTestsCount");
                         failedTestsCount += job.Value<int>("failedTestsCount");
+                        running = running | (job.Value<string>("status") == "running" || job.Value<string>("status") == "queued");
                     }
                 }
             }
 
-            return new TestResults(passedTestsCount, failedTestsCount);
+            return new TestResults(running, passedTestsCount, failedTestsCount);
         }
 
         private string AppVeyorLatestBuildApiAddress(string username, string projectSlug, string branchName)

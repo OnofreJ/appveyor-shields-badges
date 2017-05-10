@@ -5,6 +5,7 @@ A simple webapi service that gets the detailed data from AppVeyor project and re
 #### Examples
 [![This is example static reference to shields.io api](https://img.shields.io/badge/tests-1582%20passing-brightgreen.svg)](https://img.shields.io/badge/tests-1582%20passing-brightgreen.svg)
 [![This is example static reference to shields.io api](https://img.shields.io/badge/tests-12%20failed-red.svg)](https://img.shields.io/badge/tests-12%20failed-red.svg)
+[![This is example static reference to shields.io api](https://img.shields.io/badge/tests-pending-lightgrey.svg)](https://img.shields.io/badge/tests-pending-lightgrey.svg)
 
 Badge that displays last build test status on master branch. 2 styles (green and red) for successful / failed runs, with passing/failing tests occurrence count.
 Data is collected by appveyor WebAPI on `api/projects/{username}/{projectSlug}/branch/{branchName}` endpoint.
